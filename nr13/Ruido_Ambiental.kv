@@ -1,0 +1,24 @@
+
+<Ruido_Ambiental_window>
+    FloatLayout:
+        Label:
+            pos_hint: {'center_x': .2 , 'center_y': .95}
+            text: "DADOS DO CLIENTE"
+            color:
+            mode: "rectangle"
+
+        TextInput:
+            pos_hint: {'center_x': 0.21,'center_y': .9}
+            hint_text: "Razão Social"
+            size_hint: .4, .05
+            mode: "rectangle"
+        
+        TextInput:
+            pos_hint: {'center_x': 0.21,'center_y': .85}
+            hint_text: "CNPJ"
+            size_hint: .4, .05
+            mode: "rectangle"
+            input_filter: "int"
+
+        
+
