@@ -1,2 +1,2 @@
 # Ziel_project
- SIS para laudos
+Sistema de otimização para geração de laudos tecnicos.
