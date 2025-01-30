@@ -1,0 +1,21 @@
+ScreenManager:
+    Home_Window:
+    Ruido_Ambiental_Window:
+
+<Home_Window>
+    FloatLayout:
+        Label:
+            pos_hint: {'center_x': .5 , 'center_y': .9}
+            text: "Ziel Engenharia"
+            font_size: self.width * .1
+            color:
+
+        Button:
+            pos_hint: {'center_x': .22 , 'center_y': .75}
+            text: "Ruido Ambiental"
+            color:
+            background_color: 0.94, 0.97, 1, 1 
+            size_hint: .4, .05
+            on_press: app.animar_cor (self,(0, 0, 0, 1))
+            on_release: app.animar_cor (self,(0.94, 0.97, 1, 1))
+            on_press: app.root.current = "Ruido_Ambiental"

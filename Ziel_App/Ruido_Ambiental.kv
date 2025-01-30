@@ -1,20 +1,32 @@
 
 <Ruido_Ambiental_window>
+    name: "Ruido_Ambiental"
+
     FloatLayout:
+
+        Button:
+            pos_hint: {'center_x': .21 , 'center_y': .95}
+            text: "Voltar"
+            color:
+            size_hint: .4, .05
+            background_color: 0.94, 0.97, 1, 1 
+            on_press: app.animar_cor (self,(0, 0, 0, 1))
+            on_release: app.animar_cor (self,(0.94, 0.97, 1, 1))
+            on_press: app.root.current = "Home"
+
         Label:
-            pos_hint: {'center_x': .2 , 'center_y': .95}
+            pos_hint: {'center_x': .5 , 'center_y': .9}
             text: "DADOS DO CLIENTE"
             color:
-            mode: "rectangle"
 
         TextInput:
-            pos_hint: {'center_x': 0.21,'center_y': .9}
+            pos_hint: {'center_x': 0.5,'center_y': .85}
             hint_text: "Razão Social"
             size_hint: .4, .05
             mode: "rectangle"
         
         TextInput:
-            pos_hint: {'center_x': 0.21,'center_y': .85}
+            pos_hint: {'center_x': 0.5,'center_y': .8}
             hint_text: "CNPJ"
             size_hint: .4, .05
             mode: "rectangle"
