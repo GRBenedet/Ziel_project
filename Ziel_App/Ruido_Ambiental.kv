@@ -3,7 +3,12 @@
     name: "Ruido_Ambiental"
 
     FloatLayout:
-
+        canvas.before:
+            Color:
+                rgba: 0.2, 0.6, 1, 1  # Cor azul (RGBA)
+            Rectangle:
+                pos: self.pos
+                size: self.size
         Button:
             pos_hint: {'center_x': .21 , 'center_y': .95}
             text: "Voltar"
@@ -29,6 +34,58 @@
             pos_hint: {'center_x': 0.5,'center_y': .8}
             hint_text: "CNPJ"
             size_hint: .4, .05
+            mode: "rectangle"
+            input_filter: "int"
+
+        Label:
+            pos_hint: {'center_x': .5 , 'center_y': .75}
+            text: "DADOS DO LOCAL"
+            color:
+
+        Label:
+            id: location_label
+            text: "precione o botão"
+            color: 0, 0, 0, 1
+            size_hint: .3 , .05
+            pos_hint: {'center_x': .45 , 'center_y': .7}
+            canvas.before:
+                Color:
+                    rgba: 255, 255, 255, 1  
+                Rectangle:
+                    pos: self.pos
+                    size: self.size
+
+        Button:
+            pos_hint: {'center_x': .65 , 'center_y': .7}
+            size_hint: .1 , .05
+            on_press: app.get_location
+            Image:
+                source:"./img/location_icon.png"
+                size_hint: None, None
+                size: 80, 40
+                center_x: self.parent.center_x
+                center_y: self.parent.center_y
+        
+        TextInput:
+            id: endereco_label
+            pos_hint: {'center_x': 0.5,'center_y': .65}
+            hint_text: "Estado"
+            size_hint: .4, .05
+            mode: "rectangle"
+        TextInput:
+            pos_hint: {'center_x': 0.5,'center_y': .6}
+            hint_text: "Cidade"
+            size_hint: .4, .05
+            mode: "rectangle"
+        TextInput:
+            pos_hint: {'center_x': 0.45,'center_y': .55}
+            hint_text: "Endereço"
+            size_hint: .3, .05
+            mode: "rectangle"
+        TextInput:
+            pos_hint: {'center_x': 0.65,'center_y': .55}
+            hint_text: "Numero"
+            size_hint: .1, .05
             mode: "rectangle"
             input_filter: "int"
 
