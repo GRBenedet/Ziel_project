@@ -6,17 +6,25 @@ from kivy.lang import Builder
 from plyer import gps
 from geopy.geocoders import Nominatim
 
-
 class Ruido_Ambiental_Window(Screen):
 
     def on_tipo_ruido(self, instance):
 
-        for btn in self.ids.toggle_group.children:
+        for btn in self.ids.toggle_group_type.children:
             btn.background_color = (1, 1, 1, 1)  # Branco (RGBA)
         
         # Muda a cor da opção selecionada
         instance.background_color = (0, 1, 0, 1)  # Verde (RGBA)
         print(f"Selecionado: {instance.text}")
+
+    def on_med_ruido(self, instance):
+
+        for btn in self.ids.toggle_group_med.children:
+            btn.background_color = (1, 1, 1, 1)  # Branco (RGBA)
+        
+        # Muda a cor da opção selecionada
+        instance.background_color = (0, 1, 0, 1)  # Verde (RGBA)
+        print(f"Selecionado: {instance.text}")        
 
 
 class Home_Window(Screen):
@@ -58,10 +66,10 @@ class HomeApp(App):
         screen.ids["location_label"].text = f"Status do GPS: {status}"
 
     def corvert(self):
-        locator = Nominatim(user_agent="myGeocoder")
-        location = locator.geocode(self.root.ids["location_label"].text)
         screen = self.root.get_screen("Ruido_Ambiental")
-        screen.ids["endereco_label"].text = f"{screen.ids["location_label"].text}"
+        locator = Nominatim(user_agent="myGeocoder")
+        location = locator.geocode(screen.ids["location_label"].text)
+        screen.ids["endereco_label"].insert = location #f"{screen.ids["location_label"].text}"
 
 if __name__ == '__main__':
     HomeApp().run()

@@ -89,21 +89,25 @@
             mode: "rectangle"
             input_filter: "int"
 
+        Label:
+            text: "tipo de Ruido"
+            color:
+
         BoxLayout:
-            id: toggle_group
+            id: toggle_group_type
             size_hint_y: None
             height: 50
             spacing: 10
             pos_hint: {'center_x': 0.5,'center_y': .45}
 
             ToggleButton:
-                text: "Ruido Noturno"
+                text: "Noturno"
                 group: "opcoes"
                 background_color: 1, 1, 1, 1  # Branco padrão
                 on_press: root.on_tipo_ruido(self)
 
             ToggleButton:
-                text: "Ruido Diurno"
+                text: "Diurno"
                 group: "opcoes"
                 background_color: 1, 1, 1, 1  # Branco padrão
                 on_press: root.on_tipo_ruido(self)
@@ -113,5 +117,50 @@
                 group: "opcoes"
                 background_color: 1, 1, 1, 1  # Branco padrão
                 on_press: root.on_tipo_ruido(self)
-        
 
+        Label:
+            pos_hint: {'center_x': .5,'center_y': .37}
+            text: "tipo de medição"
+            color:
+
+        
+        BoxLayout:
+            id: toggle_group_med
+            size_hint_y: None
+            height: 50
+            spacing: 10
+            pos_hint: {'center_x': 0.5,'center_y': .3}
+
+            ToggleButton:
+                text: "Padrão"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_med_ruido(self)
+
+            ToggleButton:
+                text: "Incômodo de Vizinhança"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_med_ruido(self)
+            
+            ToggleButton:
+                text: "Mapeamento"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_med_ruido(self)
+        
+        BoxLayout:
+            spacing: 80
+            padding: 10
+
+            Button:
+                pos_hint: {'center_x': .80,'center_y': .1}
+                size_hint: .1 , .05
+                text: "Salvar"
+                color:
+
+            Button:
+                pos_hint: {'center_x': .90,'center_y': .1}
+                size_hint: .1 , .05
+                text: "Salvar"
+                color:
