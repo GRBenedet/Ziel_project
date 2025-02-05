@@ -58,7 +58,7 @@
         Button:
             pos_hint: {'center_x': .65 , 'center_y': .7}
             size_hint: .1 , .05
-            on_press: app.get_location
+            on_press: app.get_location()
             Image:
                 source:"./img/location_icon.png"
                 size_hint: None, None
@@ -89,5 +89,29 @@
             mode: "rectangle"
             input_filter: "int"
 
+        BoxLayout:
+            id: toggle_group
+            size_hint_y: None
+            height: 50
+            spacing: 10
+            pos_hint: {'center_x': 0.5,'center_y': .45}
+
+            ToggleButton:
+                text: "Ruido Noturno"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_tipo_ruido(self)
+
+            ToggleButton:
+                text: "Ruido Diurno"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_tipo_ruido(self)
+            
+            ToggleButton:
+                text: "Ambos"
+                group: "opcoes"
+                background_color: 1, 1, 1, 1  # Branco padrão
+                on_press: root.on_tipo_ruido(self)
         
 
